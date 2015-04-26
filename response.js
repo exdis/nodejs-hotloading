@@ -1,5 +1,12 @@
-module.change_code = true;
-module.exports = function() {
-    var response = 'Hello' + ' hotswapping!';
-    return response;
+import fixture from './fixture.js';
+class Response {
+    constructor() {
+        this.fixture = fixture;
+    }
+
+    getResponse() {
+        return this.fixture;
+    }
 }
+
+export default Response;

@@ -1,16 +1,11 @@
-var express = require('express');
+import express from 'express';
 var app = express();
 
-var hostswap = require('hotswap');
-
-var response = require('./response.js');
-
-hostswap.on('swap', function() {
-    console.log('Swap modules');
-});
+import Response from './response.js';
+var response = new Response();
 
 app.get('/', function(req, res) {
-    res.send(response());
+    res.send(response.getResponse());
 });
 
 var server = app.listen(3000, function() {
